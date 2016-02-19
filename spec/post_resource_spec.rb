@@ -3,10 +3,20 @@ RSpec.describe PostResource do
 
   let(:app) { App }
   context 'GET /posts/:id' do
+    let(:headers) do
+      {
+        'Content-Type' => 'application/json'
+      }
+    end
+
+    let(:body) do
+      Oj.dump(text: 'fuck')
+    end
+
     it 'performs a successful request' do
-      post '/posts/create', body: Oj.dump(text: 'fuck'), headers: { 'Content-Type' => 'application/json' }
+      post '/posts/create', body: body, headers: headers
       post_id = Oj.load(response.body)['response']['id']
-      get "/posts/#{post_id}", { 'Accept' => 'application/msgpack' }
+      get "/posts/#{post_id}", 'Accept' => 'application/msgpack'
       expect(response.code).to eq(200)
     end
   end

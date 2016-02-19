@@ -19,7 +19,7 @@ App = Webmachine::Application.new do |app|
 
   app.routes do
     add ['posts'], PostsResource
-    add ['posts', 'create'], PostCreationResource
+    add %w(posts create), PostCreationResource
     add ['posts', :id], PostResource
   end
 

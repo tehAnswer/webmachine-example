@@ -1,7 +1,6 @@
 require 'sequel'
 
 class DatabaseService < SimpleDelegator
-
   def initialize
     @connection = Sequel.sqlite
     @connection.create_table :posts do

@@ -6,6 +6,4 @@ class PostResource < AbstractResource
   def subject
     connection.posts.find(request.path_info[:id]).first
   end
-
-
 end

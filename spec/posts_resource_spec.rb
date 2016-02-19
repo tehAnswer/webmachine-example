@@ -4,8 +4,7 @@ RSpec.describe PostsResource do
   let(:app) { App }
   context 'GET /posts/' do
     it 'performs a successful request' do
-      get '/posts', { 'Accept' => 'application/msgpack' }
-      binding.pry
+      get '/posts', 'Accept' => 'application/msgpack'
       expect(response.code).to eq(200)
     end
   end

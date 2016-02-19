@@ -55,5 +55,4 @@ class PostCreationResource < AbstractResource
   def accept_header_provided?
     request.headers['Accept'] != '*/*'
   end
-
 end
