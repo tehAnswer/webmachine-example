@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'webmachine'
+gem 'webmachine-test'
+gem 'sequel'
+gem 'sqlite3'
+gem 'msgpack'
+gem 'oj'
+gem 'pry'
+gem 'rspec'
